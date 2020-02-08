@@ -1,0 +1,20 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  #+quicklisp(ql:quickload '() :silent t)
+  )
+
+(defpackage :ros.script.rover.3790038153
+  (:use :cl))
+(in-package :ros.script.rover.3790038153)
+
+(load "mars-rover-v2.lisp")
+
+(defun main (filename &rest argv)
+       (declare (ignorable argv))
+       (read-input-file filename))
+;;; vim: set ft=lisp lisp:
