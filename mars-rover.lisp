@@ -63,4 +63,3 @@
 (defun runme (x y orientation cmds)
   (let ((pos (cons x y)))
     (update-position pos orientation (coerce cmds 'list))))
-
